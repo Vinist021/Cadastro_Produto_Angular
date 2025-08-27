@@ -5,7 +5,7 @@
 
 <div class="row">
     <div class="col-md-10 offset-md-1">
-        <form id="formProduct">
+        <form  id="formProduct">
             <div class="row mb-3 mt-3">
                 <label for="inputName" class="col-sm-2 col-form-label">Nome:</label>
                 <div class="col-sm-10">
@@ -29,8 +29,9 @@
                 <label for="selectCategory" class="col-sm-2 col-form-label">Categoria:</label>
                 <div class="col-sm-4">
                     <select class="form-select" aria-label="Selecione uma categoria" id="selectCategory" required>
-                        <option value="" selected disabled>Escolha:</option>
-
+                        <option *ngFor="let c of categories">
+                            {{ c.name }}
+                        </option>
                     </select>
                 </div>
             </div>
