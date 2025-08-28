@@ -26,6 +26,4 @@ export class ProductComponent {
     console.log(this.product);
     this.saveEmitter.emit();
   }
-
-
 }
