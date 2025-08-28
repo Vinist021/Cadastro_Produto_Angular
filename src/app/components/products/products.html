@@ -24,7 +24,10 @@
                     <td>{{prod.description}}</td>
                     <td>{{prod.price}}</td>
                     <td>{{prod.category.name}}</td>
-                    <td>{{prod.newProduct}} {{prod.promotion}}</td>
+                    <td>
+                        <span *ngIf="prod.promotion" class="badge text-bg-success me-1">P</span>
+                        <span *ngIf="prod.newProduct" class="badge text-bg-primary">L</span>
+                    </td>
                 </tr>
             </tbody>
         </table>
