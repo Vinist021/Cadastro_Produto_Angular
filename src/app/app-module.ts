@@ -6,8 +6,8 @@ import { App } from './app';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Header } from './components/header/header';
 import { Footer } from './components/footer/footer';
-import { Product } from './components/product/product';
-import { Products } from './components/products/products';
+import { ProductComponent } from './components/product/product';
+import { ProductsComponent } from './components/products/products';
 import { FormsModule } from '@angular/forms';
 
 
@@ -16,8 +16,8 @@ import { FormsModule } from '@angular/forms';
     App,
     Header,
     Footer,
-    Product,
-    Products,
+    ProductComponent,
+    ProductsComponent,
   ],
   imports: [
     BrowserModule,
