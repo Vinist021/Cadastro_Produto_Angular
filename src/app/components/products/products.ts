@@ -19,4 +19,14 @@ export class ProductsComponent {
 
   product: Product = {} as Product;
 
+  products: Product[] = [];
+
+  saveProduct() {
+    this.product.id = this.products.length + 1;
+    this.products.push(this.product);
+    this.product = {} as Product;
+
+    console.log("Novo produto cadastrado. Total produtos: " + this.products.length);
+  }
+
 }

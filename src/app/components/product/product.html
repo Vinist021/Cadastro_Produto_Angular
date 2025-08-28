@@ -5,7 +5,7 @@
 
     <div class="row">
         <div class="col-md-10 offset-md-1">
-            <form  id="formProduct">
+            <form  id="formProduct" #formProduct="ngForm">
                 <div class="row mb-3 mt-3">
                     <label for="inputName" class="col-sm-2 col-form-label">Nome:</label>
                     <div class="col-sm-10">
@@ -54,7 +54,7 @@
                 </div>
                 <div class="row mb-3 mt-3">
                     <div class="col-sm-4">
-                        <button type="submit" class="btn btn-primary" (click)="save()">Cadastrar</button>
+                        <button type="submit" class="btn btn-primary" (click)="save()" [disabled]="!formProduct.valid">Cadastrar</button>
                     </div>
                 </div>
             </form>
