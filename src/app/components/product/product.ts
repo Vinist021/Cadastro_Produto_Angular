@@ -23,7 +23,6 @@ export class ProductComponent {
   saveEmitter = new EventEmitter<Product>();
 
   save() {
-    console.log(this.product);
     this.saveEmitter.emit();
   }
 }
