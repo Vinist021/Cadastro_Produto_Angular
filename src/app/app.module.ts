@@ -14,6 +14,7 @@ import { ProductComponent } from './components/product/product.component';
 import { ProductsComponent } from './components/products/products.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { registerLocaleData } from '@angular/common';
+import { NavbarComponent } from './navbar/navbar.component';
 
 registerLocaleData(localePt, 'pt');
 
@@ -23,7 +24,8 @@ registerLocaleData(localePt, 'pt');
     HeaderComponent,
     ProductComponent,
     ProductsComponent,
-    FooterComponent
+    FooterComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
