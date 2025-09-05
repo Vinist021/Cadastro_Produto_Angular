@@ -1,5 +1,5 @@
 {
-  "name": "cadastro-produtos-angular",
+  "name": "cadastro-produto-angular",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -8,44 +8,35 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
-  "prettier": {
-    "printWidth": 100,
-    "singleQuote": true,
-    "overrides": [
-      {
-        "files": "*.html",
-        "options": {
-          "parser": "angular"
-        }
-      }
-    ]
-  },
   "private": true,
   "dependencies": {
-    "@angular/common": "^20.2.0",
-    "@angular/compiler": "^20.2.0",
-    "@angular/core": "^20.2.0",
-    "@angular/forms": "^20.2.0",
-    "@angular/platform-browser": "^20.2.0",
-    "@angular/router": "^20.2.0",
-    "@ng-bootstrap/ng-bootstrap": "^19.0.1",
-    "@popperjs/core": "^2.11.8",
-    "bootstrap": "^5.3.6",
-    "rxjs": "~7.8.0",
-    "tslib": "^2.3.0"
+    "@angular/animations": "^14.1.0",
+    "@angular/common": "^14.1.0",
+    "@angular/compiler": "^14.1.0",
+    "@angular/core": "^14.1.0",
+    "@angular/forms": "^14.1.0",
+    "@angular/localize": "^14.1.0",
+    "@angular/platform-browser": "^14.1.0",
+    "@angular/platform-browser-dynamic": "^14.1.0",
+    "@angular/router": "^14.1.0",
+    "@ng-bootstrap/ng-bootstrap": "^13.0.0",
+    "@popperjs/core": "^2.10.2",
+    "bootstrap": "^5.2.0",
+    "rxjs": "~7.5.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular/build": "^20.2.0",
-    "@angular/cli": "^20.2.0",
-    "@angular/compiler-cli": "^20.2.0",
-    "@angular/localize": "^20.2.0",
-    "@types/jasmine": "~5.1.0",
-    "jasmine-core": "~5.9.0",
+    "@angular-devkit/build-angular": "^14.1.2",
+    "@angular/cli": "~14.1.2",
+    "@angular/compiler-cli": "^14.1.0",
+    "@types/jasmine": "~4.0.0",
+    "jasmine-core": "~4.2.0",
     "karma": "~6.4.0",
-    "karma-chrome-launcher": "~3.2.0",
+    "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.9.2"
+    "karma-jasmine-html-reporter": "~2.0.0",
+    "typescript": "~4.7.2"
   }
 }
