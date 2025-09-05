@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Category } from 'src/app/interfaces/Category';
-import { Product } from 'src/app/interfaces/Product';
+import { Category } from 'src/app/components/interfaces/Category';
+import { Product } from 'src/app/components/interfaces/Product';
 
 @Component({
   selector: 'app-product',
