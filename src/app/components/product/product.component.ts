@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Category } from 'src/app/components/interfaces/Category';
-import { Product } from 'src/app/components/interfaces/Product';
+import { Category } from 'src/app/interfaces/Category';
+import { Product } from 'src/app/interfaces/Product';
 
 @Component({
   selector: 'app-product',
@@ -27,4 +27,7 @@ export class ProductComponent implements OnInit {
     this.saveEmitter.emit();
   }
 
+  cancel() {
+    this.product = {} as Product;
+  }
 }
