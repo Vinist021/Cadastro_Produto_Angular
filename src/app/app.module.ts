@@ -15,6 +15,7 @@ import { ProductsComponent } from './components/products/products.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { registerLocaleData } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
+import { AppRoutingModule } from './app-routing.module';
 
 registerLocaleData(localePt, 'pt');
 
@@ -31,7 +32,8 @@ registerLocaleData(localePt, 'pt');
     BrowserModule,
     NgbModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'pt'}
