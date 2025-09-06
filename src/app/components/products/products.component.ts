@@ -17,6 +17,7 @@ export class ProductsComponent implements OnInit {
   products: Product[] = [];
 
   showForm: boolean = false;
+  isEditing: boolean = false;
 
   constructor(private categoryService: CategoryService, private productService: ProductService) { }
 
@@ -39,19 +40,39 @@ export class ProductsComponent implements OnInit {
 
   saveProduct(save: boolean) {
     if(save){
-      this.productService.save(this.product).subscribe({
-        next: data => {
-          this.products.push(data);
+      if(this.isEditing)
+      {
+        this.productService.update(this.product).subscribe();
+      }
+      else 
+      {
+        this.productService.save(this.product).subscribe({
+          next: data => {
+            this.products.push(data);
           }
         });
-      } 
+      }
+
+    } 
 
     this.product = {} as Product;
     this.showForm = false;
+    this.isEditing = false;
+
   }
 
   create() {
     this.showForm = true;
+  }
+
+  edit(product: Product) {
+    this.product = product;
+    this.showForm = true;
+    this.isEditing = true;
+  }
+
+  delete(product: Product) {
+    console.log(product)
   }
 
 }

@@ -18,5 +18,8 @@ export class ProductService {
     return this.http.post<Product>("http://localhost:8080/products", product);
   }
 
+  update(product:Product){
+    return this.http.put<Product>(`http://localhost:8080/products/${product.id}`, product);
+  }
 
 }
