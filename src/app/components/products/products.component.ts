@@ -72,7 +72,11 @@ export class ProductsComponent implements OnInit {
   }
 
   delete(product: Product) {
-    console.log(product)
+    this.productService.delete(product).subscribe({
+      next: () => {
+        this.products = this.products.filter(p => p.id !== product.id);
+      }
+    })
   }
 
 }
