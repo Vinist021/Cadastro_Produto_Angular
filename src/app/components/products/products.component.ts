@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Category } from 'src/app/interfaces/Category';
 import { Product } from 'src/app/interfaces/Product';
 import { CategoryService } from 'src/app/services/category.service';
@@ -14,12 +15,16 @@ export class ProductsComponent implements OnInit {
   categories: Category[] = [];
 
   product: Product = {} as Product;
+  deleteProduct: Product = {} as Product;
   products: Product[] = [];
 
   showForm: boolean = false;
   isEditing: boolean = false;
 
-  constructor(private categoryService: CategoryService, private productService: ProductService) { }
+  constructor(private categoryService: CategoryService,
+    private productService: ProductService,
+    private modalSevice: NgbModal
+  ) { }
 
   ngOnInit(): void {
     this.loadProducts();
@@ -39,13 +44,11 @@ export class ProductsComponent implements OnInit {
   }
 
   saveProduct(save: boolean) {
-    if(save){
-      if(this.isEditing)
-      {
+    if (save) {
+      if (this.isEditing) {
         this.productService.update(this.product).subscribe();
       }
-      else 
-      {
+      else {
         this.productService.save(this.product).subscribe({
           next: data => {
             this.products.push(data);
@@ -53,7 +56,7 @@ export class ProductsComponent implements OnInit {
         });
       }
 
-    } 
+    }
 
     this.product = {} as Product;
     this.showForm = false;
@@ -71,12 +74,20 @@ export class ProductsComponent implements OnInit {
     this.isEditing = true;
   }
 
-  delete(product: Product) {
-    this.productService.delete(product).subscribe({
-      next: () => {
-        this.products = this.products.filter(p => p.id !== product.id);
+  delete(modal: any, product: Product) {
+    this.deleteProduct = product;
+    this.modalSevice.open(modal).result.then(
+      (confirm) => {
+        if (confirm) {
+          this.productService.delete(product).subscribe({
+            next: () => {
+              this.products = this.products.filter(p => p.id !== product.id);
+            }
+          });
+        }
       }
-    })
+    );
+
   }
 
 }
